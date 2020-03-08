@@ -1,0 +1,24 @@
+{% extends "base/layout.html" %}
+{% load static %}
+{% block title %} Lista de cursos {% endblock %}
+{% block content %}
+
+<section class="mt-4 mb-4">
+    <h1 class="text-center">Cursos Disponibles</h1>
+    <div class="row justify-content-center">
+        {% for curso in cursos %}
+        <div class="row col-md-4 mb-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static curso.imagen.url %}" class="card-img-top" alt="cursos">
+                <div class="card-body">
+                    <h5 class="card-title">{{ curso.profesor }}</h5>
+                    <p class="card-text">{{ curso.temario }}</p>
+                    <a href="" class="btn btn-primary">Ir al
+                        curso</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

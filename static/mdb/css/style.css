@@ -1,0 +1,175 @@
+ /* Required height of parents of the Full Page Carousel for proper displaying carousel itself */
+
+ html,
+ body,
+ .view {
+     height: 100%;
+ }
+
+ /* Full Page Carousel itself*/
+
+ .carousel {
+     height: 100%;
+ }
+
+ .carousel .carousel-inner {
+     height: 100%;
+ }
+
+ .carousel .carousel-inner .carousel-item,
+ .carousel .carousel-inner .active {
+     height: 100%;
+ }
+
+ /* Navbar animation */
+
+ .navbar {
+     background-color: rgba(0, 0, 0, 0.2);
+ }
+
+ .top-nav-collapse {
+     background-color: #1C2331;
+ }
+
+ /* Adding color to the Navbar on mobile */
+
+ @media (min-width: 800px) and (max-width: 850px) {
+     .navbar:not(.top-nav-collapse) {
+         background: #1C2331 !important;
+     }
+ }
+
+ @media only screen and (max-width: 768px) {
+     .navbar {
+         background-color: #1C2331;
+     }
+ }
+
+ /* Footer color for sake of consistency with Navbar */
+
+ .page-footer {
+     background-color: #1C2331;
+ }
+
+ .btn-floating {
+     width: 55px;
+     height: 55px;
+     text-align: center;
+     border-radius: 50%;
+     margin-top: auto;
+ }
+
+ .btn-floating i {
+     position: absolute;
+     bottom: 5px;
+     right: 5px;
+     margin: -5px;
+     padding: 15px;
+ }
+
+ .btn-gplus {
+     border-color: rgba(0, 0, 0, 0.2);
+     margin-top: 10px;
+     background-color: #fa2a0e;
+ }
+
+ .btn-gplus:focus,
+ .btn-gplus.focus {
+     color: #fff;
+     background-color: rgba(192, 86, 72, 0.986);
+     border-color: rgba(0, 0, 0, 0.2);
+ }
+
+ .btn-gplus:hover {
+     color: #fff;
+     background-color: rgba(202, 29, 6, 0.986);
+     border-color: rgba(0, 0, 0, 0.2);
+ }
+
+ .btn-fb {
+     border-color: rgba(0, 0, 0, 0.2);
+     margin-top: 10px;
+     background-color: #2241f1;
+ }
+
+ .btn-fb:focus,
+ .btn-fb.focus {
+     color: #fff;
+     background-color: rgba(193, 142, 216, 0.986);
+     border-color: rgba(0, 0, 0, 0.2);
+ }
+
+ .btn-fb:hover {
+     color: #fff;
+     background-color: rgba(131, 5, 156, 0.986);
+     border-color: rgba(0, 0, 0, 0.2);
+ }
+
+ .btn-tw {
+     border-color: rgba(0, 0, 0, 0.2);
+     margin-top: 10px;
+     background-color: #3b90d4;
+ }
+
+ .btn-tw:focus,
+ .btn-tw.focus {
+     color: #fff;
+     background-color: rgba(107, 195, 236, 0.986);
+     border-color: rgba(0, 0, 0, 0.2);
+ }
+
+ .btn-tw:hover {
+     color: #fff;
+     background-color: rgba(12, 21, 146, 0.986);
+     border-color: rgba(0, 0, 0, 0.2);
+ }
+
+ .btn-in {
+     border-color: rgba(0, 0, 0, 0.2);
+     margin-top: 10px;
+     background: rgba(219, 54, 164, 1);
+     background: -moz-linear-gradient(-45deg, rgba(219, 54, 164, 1) 0%, rgba(219, 54, 164, 1) 30%, rgba(248, 181, 0, 1) 79%, rgba(252, 205, 77, 1) 92%, rgba(252, 234, 187, 1) 100%);
+     background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(219, 54, 164, 1)), color-stop(30%, rgba(219, 54, 164, 1)), color-stop(79%, rgba(248, 181, 0, 1)), color-stop(92%, rgba(252, 205, 77, 1)), color-stop(100%, rgba(252, 234, 187, 1)));
+     background: -webkit-linear-gradient(-45deg, rgba(219, 54, 164, 1) 0%, rgba(219, 54, 164, 1) 30%, rgba(248, 181, 0, 1) 79%, rgba(252, 205, 77, 1) 92%, rgba(252, 234, 187, 1) 100%);
+     background: -o-linear-gradient(-45deg, rgba(219, 54, 164, 1) 0%, rgba(219, 54, 164, 1) 30%, rgba(248, 181, 0, 1) 79%, rgba(252, 205, 77, 1) 92%, rgba(252, 234, 187, 1) 100%);
+     background: -ms-linear-gradient(-45deg, rgba(219, 54, 164, 1) 0%, rgba(219, 54, 164, 1) 30%, rgba(248, 181, 0, 1) 79%, rgba(252, 205, 77, 1) 92%, rgba(252, 234, 187, 1) 100%);
+     background: linear-gradient(135deg, rgba(219, 54, 164, 1) 0%, rgba(219, 54, 164, 1) 30%, rgba(248, 181, 0, 1) 79%, rgba(252, 205, 77, 1) 92%, rgba(252, 234, 187, 1) 100%);
+     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#db36a4', endColorstr='#fceabb', GradientType=1);
+ }
+
+ .btn-in:focus,
+ .btn-in.focus {
+     color: #fff;
+     background: rgba(240, 147, 232, 0.986);
+     border-color: rgba(0, 0, 0, 0.2);
+ }
+
+ .btn-in:hover {
+     color: #fff;
+     background: rgba(240, 16, 165, 0.986);
+     border-color: rgba(0, 0, 0, 0.2);
+ }
+
+ .btn-wh {
+     border-color: rgba(0, 0, 0, 0.2);
+     margin-top: 10px;
+     background-color: #5fe93d;
+ }
+
+ .btn-wh:focus,
+ .btn-wh.focus {
+     color: #fff;
+     background-color: rgba(169, 216, 142, 0.986);
+     border-color: rgba(0, 0, 0, 0.2);
+ }
+
+ .btn-wh:hover {
+     color: #fff;
+     background-color: rgba(68, 173, 129, 0.986);
+     border-color: rgba(0, 0, 0, 0.2);
+ }
+
+ .image {
+     position: absolute;
+     z-index: 100;
+ }

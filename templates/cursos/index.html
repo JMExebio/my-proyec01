@@ -1,0 +1,32 @@
+{% extends "base/layout.html" %}
+{% load static %}
+{% block content %}
+
+<div class="jumbotron my-3 mx-3">
+    <h1>Bienvenido {{ user.username }}</h1>
+    <p class="lead">En esta página podrás encontrar tutoriales, pdf, y podrás realizar prácticas
+        sobre temas de ciencia y tecnología, para que puedas estudiar en casa. </p>
+    <p class="lead">Vamos registrate y empiesa a encontrar material en video o pdf para tus examenes de la escuela o
+        universidad, que te servirán para que seas un mejor alumno.</p>
+
+    <p><a href="" class="btn btn-primary btn-large">Registrarse <i class=" fas fa-forward"></i></a></p>
+</div>
+<section class="mt-4 mb-4">
+    <h1 class="text-center">Cursos Disponibles</h1>
+    <div class="row justify-content-center">
+        {% for curso in cursos %}
+        <div class="row col-md-4 mb-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static curso.imagen.url %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ curso.profesor }}</h5>
+                    <p class="card-text">{{ curso.temario }}</p>
+                    <a href="" class="btn btn-primary">Ir al
+                        curso</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
