@@ -112,3 +112,11 @@ SOCIAL_AUTH_FACEBOOK_SECRET = 'cdfbb10628adf313138325026e7c628f'
 
 SOCIAL_AUTH_GOOGLE_KEY = os.environ.get("GOOGLE_KEY")
 SOCIAL_AUTH_GOOGLE_SECRET = os.environ.get("GOOGLE_SECRET")
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'  # servicio de correo smtp
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'jmexebio27@gmail.com'  # id de correo electrónico
+EMAIL_HOST_PASSWORD = 'jesus2711'  # password
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+SERVER_EMAIL = EMAIL_HOST_USER
