@@ -9,7 +9,8 @@
     <p class="lead">Vamos registrate y empiesa a encontrar material en video o pdf para tus examenes de la escuela o
         universidad, que te servirán para que seas un mejor alumno.</p>
 
-    <p><a href="" class="btn btn-primary btn-large">Registrarse <i class=" fas fa-forward"></i></a></p>
+    <p><a href="{% url 'iniciar:register' %}" class="btn btn-primary btn-large">Registrarse <i
+                class=" fas fa-forward"></i></a></p>
 </div>
 <section class="mt-4 mb-4">
     <h1 class="text-center">Cursos Disponibles</h1>
@@ -17,7 +18,7 @@
         {% for curso in cursos %}
         <div class="row col-md-4 mb-4">
             <div class="card" style="width: 18rem;">
-                <img src="{% static curso.imagen.url %}" class="card-img-top" alt="...">
+                <img src="{{ curso.imagen.url }}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{ curso.profesor }}</h5>
                     <p class="card-text">{{ curso.temario }}</p>

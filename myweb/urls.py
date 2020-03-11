@@ -6,5 +6,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('cursos.urls', namespace='cursos')),
+    path('accounts/', include('iniciar.urls', namespace='iniciar')),
+    path('', include('social.apps.django_app.urls', namespace="social")),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

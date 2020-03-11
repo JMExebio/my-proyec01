@@ -1,0 +1,57 @@
+{% extends "base/layout.html" %}
+
+{% block content %}
+<div class="content py-3 d-flex justify-content-center">
+    <div class="card pt-1 col-md-4">
+        <h5 class="card-header info-color white-text text-center py-4">
+            <strong>{{ title }}</strong>
+        </h5>
+        <div class="card-body px-5 pt-0 ">
+            <form class="text-center" method="POST" style="color: #757575;" action="#!">
+                {% csrf_token %}
+                <div class="md-form ">
+                    <label for="materialLoginFormUser">Usuario</label>
+                    {{ form.username }}
+                </div>
+                <div class="md-form ">
+                    <label for="materialLoginFormPassword">Contraseña</label>
+                    {{ form.password }}
+                </div>
+                <div class="d-flex justify-content-around">
+                    <div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="materialLoginFormRemember">
+                            <label class="form-check-label" for="materialLoginFormRemember">Recuerda</label>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" name="next" value="/" />
+                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
+                    type="submit">Ingrezar</button>
+                <div>
+                    <a href="/">¿Se te olvidó tu contraseña?</a>
+                </div>
+                <p>¿No eres miembro?
+                    <a href="">Registrate</a>
+                </p>
+                <p>o inicie sesión con:</p>
+                <a href="{% url 'social:begin' 'facebook' %}" type="button" class="btn-floating btn-fb btn-sm"
+                    style="color:#ffffff">
+                    <i class="fab fa-facebook-f fa-2x"></i>
+                </a>
+                <a href="{% url 'social:begin' 'twitter' %}" type="button" class="btn-floating btn-tw btn-sm"
+                    style="color:#ffffff">
+                    <i class="fab fa-twitter fa-2x"></i>
+                </a>
+                <a href="{% url 'social:begin' 'gloogle' %}" type="button" class="btn-floating btn-gplus btn-sm"
+                    style="color:#ffffff">
+                    <i class="fab fa-google-plus-g fa-2x"></i>
+                </a>
+            </form>
+            {% if form.errors %}
+            <p class="validation-summary-errors">Por favor ingrese un nombre de usuario y contraseña correctos.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

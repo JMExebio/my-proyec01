@@ -9,7 +9,7 @@
         {% for curso in cursos %}
         <div class="row col-md-4 mb-4">
             <div class="card" style="width: 18rem;">
-                <img src="{% static curso.imagen.url %}" class="card-img-top" alt="cursos">
+                <img src="{{ curso.imagen.url }}" class="card-img-top" alt="cursos">
                 <div class="card-body">
                     <h5 class="card-title">{{ curso.profesor }}</h5>
                     <p class="card-text">{{ curso.temario }}</p>
