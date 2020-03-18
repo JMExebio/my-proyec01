@@ -102,16 +102,17 @@ SERVER_EMAIL = EMAIL_HOST_USER
 ACCOUNT_ACTIVATION_DAYS = 7
 
 AUTHENTICATION_BACKENDS = (
-    'social.backends.facebook.FacebookAppOAuth2',
-    'social.backends.facebook.FacebookOAuth2',
-    'social.backends.twitter.TwitterOAuth',
-    'social.backends.google.GoogleOpenId',
-    'social.backends.google.GoogleOAuth2',
-    'social.backends.google.GoogleOAuth',
+    'social_core.backends.facebook.FacebookAppOAuth2',
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.google.GoogleOpenId',
+    'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.google.GoogleOAuth',
     'django.contrib.auth.backends.ModelBackend'
 )
-SOCIA_AUTH_LOGIN_REDIRECT_URL = '/'
+
 LOGIN_REDIRECT_URL = '/'
+
 SOCIAL_AUTH_TWITTER_KEY = 'vPR7TESmRImP7ktjNP3o6z6i6'
 SOCIAL_AUTH_TWITTER_SECRET = 'GpKa6YIXdJDxgVv8xW7B2qIyej16tj1XUPheylEHXgfdSoBWaQ'
 

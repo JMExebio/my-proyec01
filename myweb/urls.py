@@ -8,7 +8,7 @@ urlpatterns = [
     path('', include('cursos.urls', namespace='cursos')),
     path('accounts/', include('django_registration.backends.one_step.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('', include('social.apps.django_app.urls', namespace="social")),
+    path('', include('social_django.urls', namespace="social")),
 
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
