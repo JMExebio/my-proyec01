@@ -2,7 +2,7 @@
 <form id="logoutForm" action="{% url 'logout' %}" method="post" class="navbar-right">
     {% csrf_token %}
     <ul class="navbar-nav navbar-right">
-        <li><span class="navbar-brand">{{ user.username }}!</span></li>
+        <li><span class="navbar-brand">{{ user }}!</span></li>
         <li class="nav-iten">
             <a class="nav-link" style="color:#ffffff" href="javascript:document.getElementById('logoutForm').submit()">
                 Salir</a></li>
