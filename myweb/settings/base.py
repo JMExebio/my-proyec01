@@ -15,11 +15,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'social.apps.django_app.default',
-    'social_django',
+    'django_registration',
 
     'cursos',
-    'iniciar',
+
 ]
 
 MIDDLEWARE = [
@@ -31,7 +30,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    'social_django.middleware.SocialAuthExceptionMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
@@ -48,8 +46,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'social.apps.django_app.context_processors.backends',
-                'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
@@ -92,27 +88,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-AUTHENTICATION_BACKENDS = (
-    'social.backends.facebook.FacebookAppOAuth2',
-    'social.backends.facebook.FacebookOAuth2',
-    'social.backends.twitter.TwitterOAuth',
-    'social.backends.google.GoogleOpenId',
-    'social.backends.google.GoogleOAuth2',
-    'social.backends.google.GoogleOAuth',
-    'django.contrib.auth.backends.ModelBackend'
-)
-
-SOCIA_AUTH_LOGIN_REDIRECT_URL = '/'
-
-SOCIAL_AUTH_TWITTER_KEY = 'ba5e9414a8222a152d9a'
-SOCIAL_AUTH_TWITTER_SECRET = 'e2ac3f9a818dc8082cebbd67800c05f8206bf277'
-
-SOCIAL_AUTH_FACEBOOK_KEY = '494411674440568'
-SOCIAL_AUTH_FACEBOOK_SECRET = 'cdfbb10628adf313138325026e7c628f'
-
-SOCIAL_AUTH_GOOGLE_KEY = os.environ.get("GOOGLE_KEY")
-SOCIAL_AUTH_GOOGLE_SECRET = os.environ.get("GOOGLE_SECRET")
-
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'  # servicio de correo smtp
 EMAIL_PORT = 25
@@ -120,3 +95,4 @@ EMAIL_HOST_USER = 'jmexebio27@gmail.com'  # id de correo electrónico
 EMAIL_HOST_PASSWORD = 'jesus2711'  # password
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 SERVER_EMAIL = EMAIL_HOST_USER
+ACCOUNT_ACTIVATION_DAYS = 7

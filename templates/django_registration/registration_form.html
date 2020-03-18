@@ -1,5 +1,6 @@
 {% extends "base/layout.html" %}
 {% block content %}
+{% load add_attr %}
 <div class="content py-3 d-flex justify-content-center">
     <div class="card pt-1">
         <h5 class="card-header info-color white-text text-center py-4">
@@ -11,21 +12,8 @@
                 <div class="form-row">
                     <div class="col">
                         <div class="md-form">
-                            <input type="text" id="materialRegisterFormUser" class="form-control" name="username">
+                            {{ form.username|add_attr:'class: form-control,id: materialRegisterFormUser' }}
                             <label for="materialRegisterFormUser">Usuario</label>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="md-form">
-                            <input type="text" id="materialRegisterFormFirstName" class="form-control"
-                                name="first_name">
-                            <label for="materialRegisterFormFirstName">Nombres</label>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="md-form">
-                            <input type="text" id="materialRegisterFormLastName" class="form-control" name="last_name">
-                            <label for="materialRegisterFormLastName">Apellidos</label>
                         </div>
                     </div>
                 </div>
@@ -34,16 +22,14 @@
                     <label for="materialRegisterFormEmail">Escriba su correo electónico</label>
                 </div>
                 <div class="md-form">
-                    <input type="password" id="materialRegisterFormPassword" class="form-control"
-                        aria-describedby="materialRegisterFormPasswordHelpBlock" name="password1">
+                    {{ form.password1|add_attr:'class: form-control,id: materialRegisterFormPassword' }}
                     <label for="materialRegisterFormPassword">Escriba una contraseña</label>
                     <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
                         Al menos 8 caracteres y 1 dígito
                     </small>
                 </div>
                 <div class="md-form">
-                    <input type="password" id="materialRegisterFormPassword" class="form-control"
-                        aria-describedby="materialRegisterFormPasswordHelpBlock" name="password2">
+                    {{ form.password2|add_attr:'class: form-control,id: materialRegisterFormPassword' }}
                     <label for="materialRegisterFormPassword">Vuelva a escribir la misma contraseña</label>
                     <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
                         Al menos 8 caracteres y 1 dígito
@@ -55,16 +41,19 @@
                         boletín</label>
                 </div>
                 <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
-                    type="submit">Registrarme</button>
+                    type="submit">Registrarse</button>
                 <p>o regístrate con:</p>
 
-                <a type="button" class="btn-floating btn-fb btn-sm" style="color:#ffffff">
+                <a href="{% url 'social:begin' 'facebook' %}" type="button" class="btn-floating btn-fb btn-sm"
+                    style="color:#ffffff">
                     <i class="fab fa-facebook-f fa-2x"></i>
                 </a>
-                <a type="button" class="btn-floating btn-tw btn-sm" style="color:#ffffff">
+                <a href="{% url 'social:begin' 'twitter' %}" type="button" class="btn-floating btn-tw btn-sm"
+                    style="color:#ffffff">
                     <i class="fab fa-twitter fa-2x"></i>
                 </a>
-                <a type="button" class="btn-floating btn-gplus btn-sm" style="color:#ffffff">
+                <a href="{% url 'social:begin' 'gloogle' %}" type="button" class="btn-floating btn-gplus btn-sm"
+                    style="color:#ffffff">
                     <i class="fab fa-google-plus-g fa-2x"></i>
                 </a>
                 <hr>
