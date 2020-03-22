@@ -22,7 +22,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ curso.profesor }}</h5>
                     <p class="card-text">{{ curso.temario }}</p>
-                    <a href="" class="btn btn-primary">Ir al
+                    <a href="{% url 'cursos:temascurso' curso.id curso %}" class="btn btn-primary">Ir al
                         curso</a>
                 </div>
             </div>

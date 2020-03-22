@@ -1,0 +1,39 @@
+{% extends "base/layout.html" %}
+{% load static %}
+{% block title %} clase {% endblock %}
+{% block content %}
+<div class="text-center text-uppercase mt-4">
+    <h1 class="text-center">Tema: {{ tema_titulo }}</h1>
+</div>
+<div class="container justify-content-center col-10">
+    {% if documentos %}
+    {% for documento in documentos %}
+    <div class="btn-group">
+        <button type="button" class="btn btn-danger dropdown-toggle mt-4 mb-4 mx-4 my-4" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Infografía {{ documento }}
+        </button>
+        <div class="dropdown-menu">
+            <img width="720" height="720" src="{{ documento.documento.url }}" alt="{{ documento }}"
+                class="center-block mt-2 mx-3">
+            <div class="dropdown-divider"></div>
+            {% if documento.documento.url is not None or documento.documento.url is True%}
+            <a class="btn btn-primary  text-center " href='{{ documento.documento.url }}'>Descargar</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% if videos %}
+    {% for video in videos %}
+    <div class="container justify-content-center mb-4 mt-4">
+        <h2 class="bg-danger text-center" style="color: azure;">{{ video }}</h2>
+    </div>
+    <div class="row justify-content-center mt-4 mb-4">
+        <iframe width="720" height="540" src='{{ video.video }}' frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

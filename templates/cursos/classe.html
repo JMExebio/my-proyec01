@@ -1,0 +1,62 @@
+{% extends "base/layout.html" %}
+{% load static %}
+{% block title %} clase {% endblock %}
+{% block content %}
+<div class="text-center text-uppercase mt-4">
+    <h1 class="text-center">Tema: {{ tema_titulo }}</h1>
+</div>
+<div class="row justify-content-center">
+    <div class="table-responsive mt-4 col-8 ">
+
+        <table class="table ">
+            <thead class="bg-primary text-center">
+                <tr>
+                    <th scope="col">{{ tema_titulo }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if documentos %}
+                {% for documento in documentos %}
+                <tr>
+                    <td class="table-warning text-center ">
+                        {{ documento }}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center mt-2"><img width="720" height="720" src="{{ documento.documento.url }}"
+                            alt="{{ documento }}" class="center-block mt-2 mx-5">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">
+                        {% if documento.documento.url is not None or documento.documento.url is True%}
+                        <a href="{{ documento.documento.url }}" class="btn btn-primary mt-2 mb-2" download>Descargar</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                </td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+                {% if videos %}
+                {% for video in videos %}
+                <tr>
+                    <td class="table-danger text-center">{{ video }}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row justify-content-center">
+                            <iframe width="720" height="540" src='{{ video.video }}' frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </td>
+                </tr>
+
+                {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

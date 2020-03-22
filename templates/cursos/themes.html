@@ -1,0 +1,26 @@
+{% extends "base/layout.html" %}
+{% load static %}
+{% block title %} Lista de cursos {% endblock %}
+{% block content %}
+
+<section class="mt-4 mb-4">
+    <div class="text-center text-uppercase">
+        <h1 class="text-center">Temas Disponibles</h1>
+        <h6>Curso de {{ curso_titulo }}</h6>
+    </div>
+    <div class="row justify-content-center">
+        {% for tema in temas %}
+        <div class="row col-md-4 mb-4 mt-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ tema.imagen.url }}" class="card-img-top" alt="temas">
+                <div class="card-body">
+                    <h5 class="card-title">{{ tema }}</h5>
+                    <a href="{% url 'cursos:clasestema' tema.id tema.titulo_tema %}" class="btn btn-primary">Ir a las
+                        clases</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
